@@ -19,7 +19,7 @@ endif
 OBJS = $(SRCS:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $(<) -o $(@)
+	@$(CC) $(CFLAGS) -c $(<) -o $(@) 
 
 all: $(NAME)
 
