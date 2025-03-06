@@ -6,7 +6,7 @@
 /*   By: jomanuel <jomanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 11:02:07 by jomanuel          #+#    #+#             */
-/*   Updated: 2025/02/28 11:02:27 by jomanuel         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:37:49 by jomanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	child(char **argv, char **envp, t_pipe *pip, int num)
 	duplicate_pipes(pip, num);
 	pip->args = special_split(argv[arg_nr]);
 	if (!pip->args)
-		terminate("Invalid argument.", pip, 2);
+		terminate(ft_strjoin(argv[arg_nr], ": command not found"), pip, 3);
 	pip->cmd = test_cmd(pip->args[0], pip->spath);
 	if (!pip->cmd)
 		terminate(ft_strjoin(argv[arg_nr], ": command not found"), pip, 3);

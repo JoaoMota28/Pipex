@@ -6,7 +6,7 @@
 /*   By: jomanuel <jomanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 16:37:00 by jomanuel          #+#    #+#             */
-/*   Updated: 2025/03/05 11:19:44 by jomanuel         ###   ########.fr       */
+/*   Updated: 2025/03/06 14:38:44 by jomanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,10 @@ char	*test_cmd(char *arg, char **spath)
 	tmp = NULL;
 	cmd = NULL;
 	i = 0;
+	if (!arg)
+		return (NULL);
 	if (access(arg, X_OK) == 0)
 		return (arg);
-	cmd = ft_strjoin("./", arg);
-	if (access(cmd, X_OK) == 0)
-		return (cmd);
-	free(cmd);
 	while (spath[i])
 	{
 		tmp = ft_strjoin(spath[i], "/");
