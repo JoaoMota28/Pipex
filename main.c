@@ -6,7 +6,7 @@
 /*   By: jomanuel <jomanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 15:23:59 by jomanuel          #+#    #+#             */
-/*   Updated: 2025/02/28 12:34:19 by jomanuel         ###   ########.fr       */
+/*   Updated: 2025/03/09 23:08:05 by jomanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	main(int argc, char **argv, char **envp)
 	int		i;
 
 	i = -1;
-	init_pip(&pip);
-	path(&pip, envp);
 	if (argc == 5)
 	{
+		init_pip(&pip);
+		path(&pip, envp);
 		open_in(argv, &pip);
 		open_out(argc, argv, &pip);
 		pip.cmd_num = argc - 3 - pip.heredoc;

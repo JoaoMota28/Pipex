@@ -6,7 +6,7 @@
 /*   By: jomanuel <jomanuel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:07:39 by jomanuel          #+#    #+#             */
-/*   Updated: 2025/02/28 12:34:57 by jomanuel         ###   ########.fr       */
+/*   Updated: 2025/03/09 23:21:47 by jomanuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	main(int argc, char **argv, char **envp)
 		close_all_pipes(&pip);
 		while (++i < pip.cmd_num)
 			waitpid(pip.pids[i], NULL, 0);
-		free_all(&pip);
 	}
 	else
 		ft_putendl_fd("Invalid number of arguments.", 2);
+	free_all(&pip);
 	return (0);
 }
